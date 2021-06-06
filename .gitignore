@@ -1,6 +1,6 @@
 # Build and Release Folders
 node_modules/
-./package-lock.json
+package-lock.json
 
 # Other files and folders
 .settings/
