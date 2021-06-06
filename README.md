@@ -50,3 +50,27 @@ return todos(req, res);
 Step 9:
 $npm start
 Head over to localhost:3000/todos and a json response should appear
+
+Step 10: Add your own header
+Go to todos.js and add this before the line res.send()
+res.header("my-dummy-header", "no-use-vale");
+
+Step 11:
+$npm start
+Head over to localhost:3000/todos and a json response should appear and your custom header will be shown
+
+Step 12: Send along all headers
+Change todos.js
+
+axios.get("https://jsonplaceholder.typicode.com/todos").then((response) => {
+var keys = Object.keys(response.headers);
+var values = Object.values(response.headers);
+
+    for (var i = 0; i < keys.length; i++) {
+      console.log(keys[i]);
+      res.header(keys[i], values[i]);
+    }
+    res.header("my-dummy-header", "no-use-vale");
+    res.send(response.data);
+
+});
