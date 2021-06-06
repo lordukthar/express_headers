@@ -11,5 +11,5 @@ $express
 Step 3:
 npm start
 
-
-
+Step 4:
+Go to localhost:3000
