@@ -74,3 +74,9 @@ var values = Object.values(response.headers);
     res.send(response.data);
 
 });
+
+Step 13: Add cookie handling
+$npm i axios tough-cookie axios-cookiejar-support
+$npm install cookies
+
+

@@ -2,13 +2,14 @@ var express = require("express");
 var router = express.Router();
 
 const axios = require("axios");
+const axiosCookieJarSupport = require("axios-cookiejar-support").default;
+const tough = require("tough-cookie");
+axiosCookieJarSupport(axios);
+
+const cookieJar = new tough.CookieJar();
 
 const getBreeds = () => {
   try {
-    /* const data = await axios.get("https://jsonplaceholder.typicode.com/users");
-    console.log(data);
-    return data;*/
-
     axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
       // handle success
 
